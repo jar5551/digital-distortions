@@ -93,7 +93,7 @@ gulp.task('watch', () => {
 
 /*gulp.task('build', function() { return compile(); });*/
 
-gulp.task('build', ['clean', 'sass', 'useref', 'fonts', 'images'], function (){
+gulp.task('build', ['clean', 'sass', 'useref', 'fonts', 'images', 'videos'], function (){
   console.log('Building files');
 });
 
@@ -115,6 +115,11 @@ gulp.task('images', function(){
       interlaced: true
     })))
     .pipe(gulp.dest(path.join(dirs.dist, 'assets', 'images')))
+});
+
+gulp.task('videos', function(){
+  return gulp.src(path.join(dirs.app, 'assets', 'videos/**/*.+(mp4)'))
+    .pipe(gulp.dest(path.join(dirs.dist, 'assets', 'videos')))
 });
 
 gulp.task('fonts', function() {

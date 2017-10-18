@@ -45,3 +45,4 @@ build/
 dist/
 /app/.tmp/
 /app/assets/videos/*
+/public/
